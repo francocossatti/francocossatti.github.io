@@ -1,12 +1,13 @@
 ---
 import '../styles/global.css';
+import up from '../assets/up.svg?raw';
 import '@fontsource/urbanist/400.css';
 import '@fontsource/urbanist/700.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/700.css';
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es" class="scroll-smooth h-full overflow-y-scroll snap-y snap-mandatory">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -15,7 +16,9 @@ import '@fontsource/open-sans/700.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body class="bg-[#1A1918] relative w-screen min-h-screen flex items-center p-4">
+	  <body class="bg-[#1A1918] relative w-screen h-screen overflow-y-scroll snap-y snap-mandatory m-0">
+		<div class="grain-overlay fixed inset-0"></div>
+		<div class="fixed w-[clamp(3.5rem,8.5vw,5rem)] flex items-center justify-center drop-shadow-lg aspect-square bg-[#21201F] bottom-[16px] right-[16px] rounded-full"><div class="contenedor-icono" set:html={up} /></div>
 		<slot />
-	</body>
+		</body>
 </html>
