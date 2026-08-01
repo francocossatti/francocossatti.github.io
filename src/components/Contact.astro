@@ -6,11 +6,10 @@ import map from '../assets/map.svg?raw';
 import mail from '../assets/mail.svg?raw';
 ---
 
-<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
-<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
-
-<div class="w-full h-full flex flex-col gap-[64px]">
-    <div class="w-full h-fit flex flex-col items-center gap-[64px]">
+<div class="w-full h-full flex relative flex-col justify-center p-4 gap-16">
+    <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
+    <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
+    <div class="w-full h-fit flex flex-col items-center gap-16 z-20">
         <div>
             <div class="font-urbanist text-[#FFF0DB] uppercase font-extrabold text-center text-[clamp(3.3rem,5vw,10rem)]">Trabajemos <br class="block sm:hidden"/><span class="text-[#D3CFCA] font-normal">Juntos</span></div>
         </div>
@@ -19,18 +18,18 @@ import mail from '../assets/mail.svg?raw';
             <div class="contenedor-icono" set:html={contact} />
         </div>
     </div>
-    <div class="flex flex-col gap-[16px]">
+    <div class="flex flex-col gap-4 z-20">
             <div class="w-full h-fit flex flex-row text-[10px] justify-center items-center gap-[0.25rem]">
             <div class="bg-[#30A14E] rounded-full size-1.5"></div>
             <div class="text-[#D3CFCA] font-open-sans uppercase">Disponible para proyectos</div>
         </div>
-        <div class="card p-[16px] flex flex-col text-center gap-[16px]">
+        <div class="card p-4 flex flex-col text-center gap-4">
             <div class="text-[#D3CFCA] font-open-sans text-[20px]">Si tienes algun <span class="text-[#FFF0DB] font-bold">rol</span>, <span class="text-[#FFF0DB] font-bold">proyecto</span> o <span class="text-[#FFF0DB] font-bold">idea</span> en mente, contactame.</div>
-            <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-[16px]">
-                <div class="gap-[16px] text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={mail} />frcosati@hotmail.com</div>
-                <div class="gap-[16px] text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={whatsapp} />+59892302627</div>
-                <div class="gap-[16px] text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={map} />N. Palmira, Uruguay</div>
-                <div class="gap-[16px] text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={linkedin} />Conectemos</div>
+            <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-4">
+                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={mail} />frcosati@hotmail.com</div>
+                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={whatsapp} />+59892302627</div>
+                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={map} />N. Palmira, Uruguay</div>
+                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={linkedin} />Conectemos</div>
             </div>
         </div>
     </div>

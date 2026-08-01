@@ -1,0 +1,8 @@
+---
+const { texto } = Astro.props;
+---
+
+<div class="p-2 place-items-center gap-2 text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card">
+    <slot/>
+    <span>{texto}</span>
+</div>

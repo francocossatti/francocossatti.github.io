@@ -8,36 +8,36 @@ import logoAWS from '../assets/logo-aws.svg?raw';
 import logoSolidJS from '../assets/logo-solidjs.svg?raw';
 import logoTailwind from '../assets/logo-tailwind.svg?raw';
 import logoMotion from '../assets/logo-motion.svg?raw';
+import SkillCard from '../components/SkillCard.astro';
 ---
 
-<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
-<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
-
-<div class="w-full h-full flex flex-col justify-center">
-	<div class="w-full h-fit flex flex-col gap-[24px]">
-		<div class="w-full h-fit flex flex-col gap-[24px]">
+<div class="w-full h-screen flex flex-col justify-center m-4 relative">
+	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
+	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
+	<div class="w-full h-fit flex flex-col relative gap-6 z-20">
+		<div class="w-full h-fit flex flex-col items-end gap-6">
 		<div class="w-full h-fit justify-items-end">
 			<h1 class="w-fit h-fit text-[clamp(2.3rem,4vw,10rem)] text-right text-[#FFF0DB] uppercase font-urbanist font-extrabold">¿Cuáles<br class="block sm:hidden" /> son mis <br class="block sm:hidden" />habilidades?</h1>
 			<p class="w-fit h-fit text-nowrap text-[clamp(0.8rem,2.5vw,2rem)] text-right font-open-sans text-[#D3CFCA]">La mejor habilidad es la capacidad de aprender</p>
 		</div>
-		<div class="w-full h-fit flex flex-row gap-[24px]">
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-[8px]">Backend</button>
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-[8px]">Frontend</button>
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-[8px]">Data</button>
+		<div class="w-full h-fit flex flex-row gap-6">
+			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Backend</button>
+			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Frontend</button>
+			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Data</button>
 		</div>
 	</div>
-		<div class="w-full h-full grid grid-cols-2 grid-rows-3 gap-[16px]">
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoNet} />.NET</div>
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoGit} />Git</div>
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoPostgreSQL} />PostgreSQL</div>
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoTypeScript} />TypeScript</div>
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoDocker} />Docker</div>
-			<div class="p-[10px] place-items-center gap-[8px] text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card"><div class="contenedor-icono" set:html={logoAWS} />AWS</div>
+		<div class="w-full h-full grid grid-cols-2 grid-rows-3 gap-4">
+			<SkillCard texto=".NET"><div set:html={logoNet}/></SkillCard>
+			<SkillCard texto="Git"><div set:html={logoGit}/></SkillCard>
+			<SkillCard texto="PostgreSQL"><div set:html={logoPostgreSQL}/></SkillCard>
+			<SkillCard texto="TypeScript"><div set:html={logoTypeScript}/></SkillCard>
+			<SkillCard texto="Docker"><div set:html={logoDocker}/></SkillCard>
+			<SkillCard texto="AWS"><div set:html={logoAWS}/></SkillCard>
 		</div>
-			<div class="w-full h-fit flex flex-row gap-[24px]">
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-[8px]"><div class="contenedor-icono" set:html={logoSolidJS} />SolidJS</button>
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-[8px]"><div class="contenedor-icono" set:html={logoTailwind} />Tailwind</button>
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-[8px]"><div class="contenedor-icono" set:html={logoMotion} />Motion</button>
+			<div class="w-full h-fit flex flex-row gap-6">
+				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoSolidJS} />SolidJS</button>
+				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoTailwind} />Tailwind</button>
+				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoMotion} />Motion</button>
 			</div>
 	</div>
 </div>

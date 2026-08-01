@@ -1,0 +1,53 @@
+---
+import github from '../assets/github.svg?raw';
+import logoGithub from '../assets/logo-github.svg?raw';
+import xenio from '../assets/xenio.svg?raw';
+import utec from '../assets/utec.svg?raw';
+import nuuxia from '../assets/nuuxia.svg?raw';
+import download from '../assets/download.svg?raw';
+---
+
+<div class="w-full h-screen relative flex flex-col justify-center ">
+    <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
+	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
+    <div class="relative flex flex-col gap-4 m-4 z-20">
+        <div class="flex gap-4 items-center">
+            <p class="card font-open-sans text-[16px] text-[#D3CFCA]">Me llamo Franco. Soy <span class="text-[#FFF0DB] font-bold">licenciado en TI</span> y disfruto desarrollar software, diseñar soluciones y explorar el <br> mundo del <span class="text-[#FFF0DB] font-bold">desarrollo</span> y los <span class="text-[#FFF0DB] font-bold">datos</span>.</p>
+            <h1 class="text-[44px] text-center text-[#FFF0DB] font-urbanist font-extrabold">¿QUIÉN SOY?</h1>
+        </div>
+        <div class="flex gap-4 font-open-sans text-center text-[#D3CFCA]">
+            <div class="flex flex-col card gap-1 text-[19px]">
+                <div class="flex gap-4">
+                    <div class="contenedor-icono" set:html={logoGithub} />
+                    <p>Actividad en Github</p>
+                </div>
+                <div class="contenedor-icono" set:html={github} />
+            </div>
+            <div class="flex uppercase w-fit flex-col gap-4 justify-center card text-[8px]">
+                <p class="w-fit"><span class="text-[#FFF0DB] text-[16px] font-bold">10</span> Repos</p>
+                <p class="w-fit"><span class="text-[#FFF0DB] text-[16px] font-bold">8</span> commits</p>
+            </div>
+        </div>
+        <div class="flex flex-col content-center relative">
+            <div class="absolute top-1/2 border-t left-0 right-0 border-white border-dashed ml-[-1rem] mr-[-1rem]"/>
+            <div class="flex text-white font-open-sans uppercase basis-[6rem] text-center w-full justify-between">
+                <div class="flex flex-col items-center">
+                    <div class="flex-1 flex items-center"><div set:html={xenio} /></div>
+                    <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
+                    <p class="flex-1 text-[10px]">jul. 2024 - may-2025 <br> <span class="text-[6px]">fULL-STACK DEVELOPER</span></p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="flex-1 flex items-center"><div set:html={nuuxia}/></div>
+                    <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
+                    <p class="flex-1 text-[10px]">jul. 2025 - MAR. 2026 <br> <span class="text-[6px]">FREELANCE AUTOMATION DEVELOPER</span></p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="flex-1 flex items-center"><div set:html={utec}/></div>
+                    <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
+                    <p class="flex-1 text-[10px]">dic. 2025 <br> <span class="text-[6px]">EGRESO UNIVERSITARIO</span></p>
+                </div>
+            </div>
+        </div>
+        <button class="h-full w-full drop-shadow-lg flex items-center justify-center uppercase gap-4 p-4 rounded-full font-open-sans font-bold bg-[#21201F] text-[#FFF0DB]"><div set:html={download}/>dESCARGAR CV</button>
+    </div>
+</div>
