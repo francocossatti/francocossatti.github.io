@@ -1,8 +1,8 @@
 ---
-const { texto } = Astro.props;
+const { texto, logo } = Astro.props;
 ---
 
-<div class="p-2 place-items-center gap-2 text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card">
-    <slot/>
+<div class="h-fit p-4 place-items-center justify-center gap-2 text-[#D3CFCA] font-open-sans flex flex-col w-full h-full card">
+    <img loading="lazy" src={logo} alt={texto} class="w-[clamp(2rem,5vw,4rem)] h-[clamp(2rem,5vw,4rem)]" />
     <span>{texto}</span>
 </div>

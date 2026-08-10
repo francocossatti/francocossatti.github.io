@@ -12,21 +12,23 @@ const optimizedBackground = await getImage({
 });
 ---
 
-<div class="w-full h-screen relative flex flex-col justify-center bg-center bg-fixed bg-cover" style={`background-image: url(${optimizedBackground.src});`}>
+<div id="home" class="w-full relative flex flex-col justify-center bg-center bg-fixed bg-cover" style={`background-image: url(${optimizedBackground.src});`}>
   <div class="bg-[#0F0F0F] opacity-80 absolute inset-0"/>
-  <div class="flex flex-col gap-24 text-[#D3CFCA] m-4 relative z-20">
-    <div class="font-urbanist uppercase">
-      <h1 class="font-extrabold text-transparent bg-center bg-cover bg-fixed bg-clip-text  text-[4.4rem]" style={`background-image: url(${optimizedBackground.src});`}>Franco Cossatti</h1>
-      <h2 class="text-right text-[1.06rem]">Desarrollador <span class="text-[#FFF0DB] font-bold">Digital</span></h2>
-    </div>
-    <div class="flex flex-col gap-32 font-open-sans uppercase text-center">
-      <p class="text-[1.25rem]">Resuelvo problemas digitales <br> mediante desarrollo <br> y análisis desde <span class="text-[#FFF0DB] font-bold">Nueva Palmira</span></p>
-      <div class="text-[0.6rem] bg-[#21201F]/65 border border-solid border-[#D3CFCA] rounded-full flex p-4 gap-4 uppercase justify-center mt-4">
-        <button class="flex flex-col items-center"><div set:html={aboutme} />Sobre mi</button>
-        <button class="flex flex-col items-center"><div set:html={code} />Habilidades</button>
-        <button class="flex flex-col items-center"><div set:html={projects} />Proyectos</button>
-        <button class="flex flex-col items-center"><div set:html={mail} />Contacto</button>
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-24 md:gap-8 text-[#D3CFCA] m-4 md:mx-16 relative z-20">
+    <div class="flex flex-col gap-24 md:gap-16">
+      <div class="w-fit font-urbanist uppercase">
+        <h1 class="font-extrabold text-transparent w-min xl:text-nowrap bg-center bg-cover bg-fixed bg-clip-text text-[4.4rem] md:text-[6.5rem] md:leading-none" style={`background-image: url(${optimizedBackground.src});`}>Franco <br class="md:hidden">Cossatti</h1>
+        <h2 class="text-right text-[1.06rem] md:text-[1.3rem]">Desarrollador <span class="text-[#FFF0DB] font-bold">Digital</span></h2>
       </div>
+      <p class="font-open-sans uppercase text-center md:text-left text-[1.25rem] md:text-[1.5rem] md:max-w-md">
+        Resuelvo problemas digitales <br class="md:hidden" /> mediante desarrollo <br class="md:hidden" /> y análisis desde <span class="text-[#FFF0DB] font-bold">Nueva Palmira</span>
+      </p>
+    </div>
+    <div class="text-[0.6rem] md:text-[0.75rem] bg-[#21201F]/65 border border-solid border-[#D3CFCA] rounded-full flex md:flex-col p-4 md:py-8 md:px-3 gap-4 md:gap-10 font-open-sans uppercase justify-center items-center">
+      <a href="#about" class="flex flex-col items-center gap-1"><div set:html={aboutme} />Sobre mi</a>
+      <a href="#skills" class="flex flex-col items-center gap-1"><div set:html={code} />Habilidades</a>
+      <a href="#projects" class="flex flex-col items-center gap-1"><div set:html={projects} />Proyectos</a>
+      <a href="#contact" class="flex flex-col items-center gap-1"><div set:html={mail} />Contacto</a>
     </div>
   </div>
 </div>

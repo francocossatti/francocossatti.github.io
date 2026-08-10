@@ -6,31 +6,51 @@ import map from '../assets/map.svg?raw';
 import mail from '../assets/mail.svg?raw';
 ---
 
-<div class="w-full h-full flex relative flex-col justify-center p-4 gap-16">
+<div id="contact" class="w-full flex relative flex-col justify-center p-4 lg:mx-auto lg:max-w-5xl gap-16 lg:gap-0">
     <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
     <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
-    <div class="w-full h-fit flex flex-col items-center gap-16 z-20">
-        <div>
-            <div class="font-urbanist text-[#FFF0DB] uppercase font-extrabold text-center text-[clamp(3.3rem,5vw,10rem)]">Trabajemos <br class="block sm:hidden"/><span class="text-[#D3CFCA] font-normal">Juntos</span></div>
+
+    <div class="w-full h-full flex flex-col justify-center lg:flex-row lg:items-center lg:justify-between gap-16 lg:gap-12 z-20">
+
+        <div class="w-full lg:w-fit h-fit flex flex-col items-center gap-16 lg:gap-10 shrink-0">
+            <div class="font-urbanist text-[#FFF0DB] uppercase font-extrabold text-center lg:text-center text-[clamp(3.3rem,5vw,10rem)] lg:text-[4rem]">Trabajemos <br class="block sm:hidden lg:block"/><span class="text-[#D3CFCA] font-normal">Juntos</span></div>
+            
+
+            <button
+                name="Contact button"
+                type="button"
+                data-cal-link="kalio-imdcvd/30min"
+                data-cal-namespace="30min"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                class='w-[clamp(5rem,5vw,10rem)] lg:w-24 flex items-center justify-center rounded-full bg-[#21201F] drop-shadow-lg aspect-square cursor-pointer hover:scale-105 transition-transform duration-200'
+            >
+                <div class="contenedor-icono" set:html={contact} />
+            </button>
         </div>
 
-        <div class='w-[clamp(5rem,5vw,10rem)] flex items-center justify-center rounded-full bg-[#21201F] drop-shadow-lg aspect-square'>
-            <div class="contenedor-icono" set:html={contact} />
-        </div>
-    </div>
-    <div class="flex flex-col gap-4 z-20">
-            <div class="w-full h-fit flex flex-row text-[10px] justify-center items-center gap-[0.25rem]">
-            <div class="bg-[#30A14E] rounded-full size-1.5"></div>
-            <div class="text-[#D3CFCA] font-open-sans uppercase">Disponible para proyectos</div>
-        </div>
-        <div class="card p-4 flex flex-col text-center gap-4">
-            <div class="text-[#D3CFCA] font-open-sans text-[20px]">Si tienes algun <span class="text-[#FFF0DB] font-bold">rol</span>, <span class="text-[#FFF0DB] font-bold">proyecto</span> o <span class="text-[#FFF0DB] font-bold">idea</span> en mente, contactame.</div>
-            <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-4">
-                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={mail} />frcosati@hotmail.com</div>
-                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={whatsapp} />+59892302627</div>
-                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={map} />N. Palmira, Uruguay</div>
-                <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px]"><div class="contenedor-icono" set:html={linkedin} />Conectemos</div>
+        <div class="flex flex-col gap-2 items-center">
+            <div class="w-full h-fit flex flex-row text-[10px] lg:text-[13px] justify-center items-center gap-[0.25rem]">
+                <div class="bg-[#30A14E] rounded-full size-1.5"></div>
+                <div class="text-[#D3CFCA] font-open-sans uppercase">Disponible para proyectos</div>
+            </div>
+            <div class="h-fit card p-4 max-w-[40rem] lg:p-6 flex flex-col text-center lg:text-left gap-4 lg:gap-6">
+                <div class="text-[#D3CFCA] font-open-sans text-[20px] lg:text-[22px]">Si tienes algun <span class="text-[#FFF0DB] font-bold">rol</span>, <span class="text-[#FFF0DB] font-bold">proyecto</span> o <span class="text-[#FFF0DB] font-bold">idea</span> en mente, contactame.</div>
+                <div class="w-full h-full grid grid-cols-2 grid-rows-2 gap-4 lg:gap-5">
+                    <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px] lg:text-[13px]"><div class="w-5 [&_svg]:w-full [&_svg]:h-auto" set:html={mail} />frcosati@hotmail.com</div>
+                    <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px] lg:text-[13px]"><div class="w-5 [&_svg]:w-full [&_svg]:h-auto" set:html={whatsapp} />+59892302627</div>
+                    <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px] lg:text-[13px]"><div class="w-5 [&_svg]:w-full [&_svg]:h-auto" set:html={map} />N. Palmira, Uruguay</div>
+                    <div class="gap-4 text-[#D3CFCA] font-open-sans w-full h-full flex flex-row text-[11px] lg:text-[13px]"><div class="w-5 [&_svg]:w-full [&_svg]:h-auto" set:html={linkedin} />Conectemos</div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script is:inline>
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "30min", {origin:"https://app.cal.com"});
+  Cal.config = Cal.config || {};
+  Cal.config.forwardQueryParams = true;
+  Cal.ns["30min"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["30min"]("preload", {calLink: "kalio-imdcvd/30min"});
+</script>

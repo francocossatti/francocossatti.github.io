@@ -4,50 +4,63 @@ import logoGithub from '../assets/logo-github.svg?raw';
 import xenio from '../assets/xenio.svg?raw';
 import utec from '../assets/utec.svg?raw';
 import nuuxia from '../assets/nuuxia.svg?raw';
-import download from '../assets/download.svg?raw';
+import Download from '../assets/download.svg';
+import cv from '../assets/cv.pdf';
 ---
 
-<div class="w-full h-screen relative flex flex-col justify-center ">
+<div id="about" class="w-full flex relative flex-col justify-center p-4 md:mx-auto gap-16 md:gap-0">
     <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
 	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
-    <div class="relative flex flex-col gap-4 m-4 z-20">
-        <div class="flex gap-4 items-center">
-            <p class="card font-open-sans text-[16px] text-[#D3CFCA]">Me llamo Franco. Soy <span class="text-[#FFF0DB] font-bold">licenciado en TI</span> y disfruto desarrollar software, diseñar soluciones y explorar el <br> mundo del <span class="text-[#FFF0DB] font-bold">desarrollo</span> y los <span class="text-[#FFF0DB] font-bold">datos</span>.</p>
-            <h1 class="text-[44px] text-center text-[#FFF0DB] font-urbanist font-extrabold">¿QUIÉN SOY?</h1>
+
+    <div class="relative flex flex-col md:gap-10 w-full z-20">
+
+        <div class="flex w-full justify-center">
+            <div class="items-center flex flex-col gap-4 ">
+            <div class="flex flex-col-reverse md:flex-row gap-2 md:gap-16 items-center md:justify-between">
+            <p class="card font-open-sans text-[16px] md:text-[20px] md:max-w-xl text-[#D3CFCA]">Me llamo Franco. Soy <span class="text-[#FFF0DB] font-bold">licenciado en TI</span> y disfruto desarrollar software, diseñar soluciones y explorar el <br class="md:hidden" /> mundo del <span class="text-[#FFF0DB] font-bold">desarrollo</span> y los <span class="text-[#FFF0DB] font-bold">datos</span>.</p>
+            <h1 class="text-[44px] md:text-[3.5rem] text-center md:text-right shrink-0 text-[#FFF0DB] font-urbanist font-extrabold">¿QUIÉN SOY?</h1>
         </div>
-        <div class="flex gap-4 font-open-sans text-center text-[#D3CFCA]">
-            <div class="flex flex-col card gap-1 text-[19px]">
-                <div class="flex gap-4">
+
+        <div class="flex w-full gap-4 md:gap-6 font-open-sans text-center text-[#D3CFCA]">
+            <a href="https://github.com/francocossatti" class="flex flex-col card hover:outline hover:outline-[#B2E1FF] shrink flex-1 gap-1 md:gap-3 text-[19px] md:text-[22px]">
+                <div class="flex gap-4 items-center">
                     <div class="contenedor-icono" set:html={logoGithub} />
                     <p>Actividad en Github</p>
                 </div>
-                <div class="contenedor-icono" set:html={github} />
-            </div>
-            <div class="flex uppercase w-fit flex-col gap-4 justify-center card text-[8px]">
-                <p class="w-fit"><span class="text-[#FFF0DB] text-[16px] font-bold">10</span> Repos</p>
-                <p class="w-fit"><span class="text-[#FFF0DB] text-[16px] font-bold">8</span> commits</p>
+                <div class="contenedor-icono w-full" set:html={github} />
+            </a>
+            <div class="flex uppercase w-fit md:w-auto md:px-8 flex-col gap-4 md:gap-6 justify-center card text-[8px] md:text-[10px]">
+                <p><span class="text-[#FFF0DB] text-[16px] md:text-[22px] font-bold">10</span> <br/> Repos</p>
+                <p><span class="text-[#FFF0DB] text-[16px] md:text-[22px] font-bold">8</span> <br/> commits</p>
             </div>
         </div>
-        <div class="flex flex-col content-center relative">
+        </div>
+        </div>
+
+        <div class="flex flex-col content-center relative pt-4 w-full">
             <div class="absolute top-1/2 border-t left-0 right-0 border-white border-dashed ml-[-1rem] mr-[-1rem]"/>
-            <div class="flex text-white font-open-sans uppercase basis-[6rem] text-center w-full justify-between">
-                <div class="flex flex-col items-center">
-                    <div class="flex-1 flex items-center"><div set:html={xenio} /></div>
+            <div class="flex text-white font-open-sans uppercase basis-[6rem] md:basis-[8rem] text-center w-full justify-between md:justify-around">
+                <div class="flex flex-col items-center md:gap-2">
+                    <div class="flex-1 flex items-center md:scale-125"><div set:html={xenio} /></div>
                     <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
-                    <p class="flex-1 text-[10px]">jul. 2024 - may-2025 <br> <span class="text-[6px]">fULL-STACK DEVELOPER</span></p>
+                    <p class="flex-1 text-[10px] md:text-[16px]">jul. 2024 - may-2025 <br> <span class="text-[8px] md:text-[12px]">FULL-STACK DEVELOPER</span></p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div class="flex-1 flex items-center"><div set:html={nuuxia}/></div>
+                <div class="flex flex-col items-center md:gap-2">
+                    <div class="flex-1 flex items-center md:scale-125"><div set:html={nuuxia}/></div>
                     <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
-                    <p class="flex-1 text-[10px]">jul. 2025 - MAR. 2026 <br> <span class="text-[6px]">FREELANCE AUTOMATION DEVELOPER</span></p>
+                    <p class="flex-1 text-[10px] md:text-[16px]">jul. 2025 - MAR. 2026 <br> <span class="text-[8px] md:text-[12px]">FREELANCE AUTOMATION DEVELOPER</span></p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <div class="flex-1 flex items-center"><div set:html={utec}/></div>
+                <div class="flex flex-col items-center md:gap-2">
+                    <div class="flex-1 flex items-center md:scale-125"><div set:html={utec}/></div>
                     <div class="shrink-0 bg-white w-[10px] h-[10px] rotate-45"/>
-                    <p class="flex-1 text-[10px]">dic. 2025 <br> <span class="text-[6px]">EGRESO UNIVERSITARIO</span></p>
+                    <p class="flex-1 text-[10px] md:text-[16px]">dic. 2025 <br> <span class="text-[8px] md:text-[12px]">EGRESO UNIVERSITARIO</span></p>
                 </div>
             </div>
         </div>
-        <button class="h-full w-full drop-shadow-lg flex items-center justify-center uppercase gap-4 p-4 rounded-full font-open-sans font-bold bg-[#21201F] text-[#FFF0DB]"><div set:html={download}/>dESCARGAR CV</button>
+
+        <a href={cv} download class="hover:bg-[#D3CFCA] hover:text-[#21201F]  h-full w-full md:w-fit md:self-center drop-shadow-lg flex items-center justify-center uppercase gap-4 p-4 md:px-10 rounded-full font-open-sans font-bold bg-[#21201F] text-[#FFF0DB]">
+            <Download/>
+            Descargar CV
+        </a>
     </div>
 </div>

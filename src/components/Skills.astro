@@ -1,43 +1,133 @@
 ---
-import logoNet from '../assets/logo-net.svg?raw';
-import logoGit from '../assets/logo-git.svg?raw';
-import logoPostgreSQL from '../assets/logo-postgresql.svg?raw';
-import logoTypeScript from '../assets/logo-typescript.svg?raw';
-import logoDocker from '../assets/logo-docker.svg?raw';
-import logoAWS from '../assets/logo-aws.svg?raw';
-import logoSolidJS from '../assets/logo-solidjs.svg?raw';
-import logoTailwind from '../assets/logo-tailwind.svg?raw';
-import logoMotion from '../assets/logo-motion.svg?raw';
 import SkillCard from '../components/SkillCard.astro';
+import logoNet from '../assets/logo-net.svg';
+import logoSolidJS from '../assets/logo-solidjs.svg';
+import logoTailwind from '../assets/logo-tailwind.svg';
+import logoSQL from '../assets/logo-sql.svg'
+import logoPowerBI from '../assets/logo-powerbi.svg'
+import logoTypescript from '../assets/logo-typescript.svg'
+import logoMotion from '../assets/logo-motion.svg';
+import logoDocker from '../assets/logo-docker.svg'
+import logoAWS from '../assets/logo-aws.svg'
+import logoGit from '../assets/logo-git.svg';
+import logoPostgreSQL from '../assets/logo-postgresql.svg';
+
+const categorias = {
+	backend: [{ nombre: '.NET', logo: logoNet.src }, { nombre: 'Git', logo: logoGit.src }, { nombre: 'PostgreSQL', logo: logoPostgreSQL.src }, { nombre: 'Docker', logo: logoDocker.src}, { nombre: 'Typescript', logo: logoTypescript.src }, { nombre: 'AWS', logo: logoAWS.src }],
+	frontend: [{ nombre: 'SolidJS', logo: logoSolidJS.src }, { nombre: 'Tailwind', logo: logoTailwind.src }, { nombre: 'Motion', logo: logoMotion.src }],
+	data: [{ nombre: 'Power BI', logo: logoPowerBI.src }, { nombre: 'SQL', logo: logoSQL.src }, { nombre: 'PostgreSQL', logo: logoPostgreSQL.src }],
+};
+
+const todasLasTecnologias = [{ nombre: '.NET', logo: logoNet.src }, { nombre: 'Git', logo: logoGit.src }, { nombre: 'PostgreSQL', logo: logoPostgreSQL.src }, { nombre: 'SolidJS', logo: logoSolidJS.src },
+	{ nombre: 'Tailwind', logo: logoTailwind.src }, { nombre: 'Motion', logo: logoMotion.src }, { nombre: 'Power BI', logo: logoPowerBI.src }, { nombre: 'SQL', logo: logoSQL.src }
+]
 ---
 
-<div class="w-full h-screen flex flex-col justify-center m-4 relative">
+<div id="skills" class="w-full flex relative flex-col justify-center md:mx-auto gap-4 md:gap-0">
 	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
 	<div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,30vw,16rem)] top-[clamp(6rem,70vh,35rem)]"></div>
-	<div class="w-full h-fit flex flex-col relative gap-6 z-20">
-		<div class="w-full h-fit flex flex-col items-end gap-6">
-		<div class="w-full h-fit justify-items-end">
-			<h1 class="w-fit h-fit text-[clamp(2.3rem,4vw,10rem)] text-right text-[#FFF0DB] uppercase font-urbanist font-extrabold">¿Cuáles<br class="block sm:hidden" /> son mis <br class="block sm:hidden" />habilidades?</h1>
-			<p class="w-fit h-fit text-nowrap text-[clamp(0.8rem,2.5vw,2rem)] text-right font-open-sans text-[#D3CFCA]">La mejor habilidad es la capacidad de aprender</p>
-		</div>
-		<div class="w-full h-fit flex flex-row gap-6">
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Backend</button>
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Frontend</button>
-			<button class="text-[#D3CFCA] font-open-sans text-[12px] card w-full p-2">Data</button>
-		</div>
-	</div>
-		<div class="w-full h-full grid grid-cols-2 grid-rows-3 gap-4">
-			<SkillCard texto=".NET"><div set:html={logoNet}/></SkillCard>
-			<SkillCard texto="Git"><div set:html={logoGit}/></SkillCard>
-			<SkillCard texto="PostgreSQL"><div set:html={logoPostgreSQL}/></SkillCard>
-			<SkillCard texto="TypeScript"><div set:html={logoTypeScript}/></SkillCard>
-			<SkillCard texto="Docker"><div set:html={logoDocker}/></SkillCard>
-			<SkillCard texto="AWS"><div set:html={logoAWS}/></SkillCard>
-		</div>
-			<div class="w-full h-fit flex flex-row gap-6">
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoSolidJS} />SolidJS</button>
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoTailwind} />Tailwind</button>
-				<button class="text-[#D3CFCA] flex flex-row gap-[8px] justify-center font-open-sans text-[12px] card w-full p-2"><div class="contenedor-icono" set:html={logoMotion} />Motion</button>
+
+	<div class="w-full h-fit flex flex-col md:items-start md:gap-8 relative gap-6 z-20">
+
+		<div class="flex flex-col gap-6 md:flex-row md:gap-20 p-4 md:max-w-240 self-center w-full">
+			<div class="w-full md:w-[22rem] md:shrink-0 h-fit flex flex-col items-end md:items-start gap-6">
+			<div class="w-full h-fit justify-items-end md:justify-items-start">
+				<h1 class="w-fit h-fit text-[clamp(2.3rem,4vw,10rem)] md:text-[3.2rem] text-right md:text-left text-[#FFF0DB] uppercase font-urbanist font-extrabold">¿Cuáles<br class="block sm:hidden" /> son mis <br class="block sm:hidden" />habilidades?</h1>
+				<p class="w-fit h-fit text-nowrap text-[clamp(0.8rem,2.5vw,2rem)] md:text-[1.1rem] text-right md:text-left font-open-sans text-[#D3CFCA]">La mejor habilidad es la capacidad de aprender</p>
 			</div>
+
+			<div class="w-full h-fit flex flex-row md:flex-col gap-6 md:gap-3" id="filtro-categorias">
+				<button data-categoria="backend" class="categoria-btn text-[#D3CFCA] font-open-sans text-[12px] md:text-[14px] card w-full p-2 md:text-left md:px-4 transition-colors duration-300">Backend</button>
+				<button data-categoria="frontend" class="categoria-btn text-[#D3CFCA] font-open-sans text-[12px] md:text-[14px] card w-full p-2 md:text-left md:px-4 transition-colors duration-300">Frontend</button>
+				<button data-categoria="data" class="categoria-btn text-[#D3CFCA] font-open-sans text-[12px] md:text-[14px] card w-full p-2 md:text-left md:px-4 transition-colors duration-300">Data</button>
+			</div>
+		</div>
+
+		<div class="w-full relative" id="grid-skills">
+			{Object.entries(categorias).map(([cat, techs]) => (
+				<div class="skills-grupo grid grid-cols-3 gap-4 md:gap-6 absolute top-0 left-0 w-full transition-all duration-300 ease-out" data-grupo={cat}>
+					{techs.map((tech) => (
+						<div class="w-full max-h-[8rem]">
+							<SkillCard texto={tech.nombre} logo={tech.logo} />
+						</div>
+					))}
+				</div>
+			))}
+		</div>
+		</div>
+
+		<div class="relative w-full overflow-hidden">
+ 			<div class="absolute left-0  w-1/8 h-full z-20 bg-linear-to-r from-[#111110] to-trasparent overflow-hidden"/>
+			<div class="absolute right-0 w-1/8 h-full z-20 bg-linear-to-l from-[#111110] to-trasparent overflow-hidden"/>
+			<div class="relative marquee h-full flex w-[200%] overflow-hidden gap-4 md:gap-0">
+				<div class="w-1/2 h-fit flex gap-4 justify-around">
+					{todasLasTecnologias.map((tecnologia) => (
+						<div class="bg-[#21201F]/30 p-1 md:p-4 rounded-full">
+							<img loading="lazy" class="w-[clamp(1rem,3vw,2rem)] h-[clamp(1rem,3vw,2rem)]" alt={tecnologia.nombre} src={tecnologia.logo}/>
+						</div>
+					))}
+				</div>
+				<div class="w-1/2 h-fit flex gap-4 justify-around">
+					{todasLasTecnologias.map((tecnologia) => (
+						<div class="bg-[#21201F]/30 p-1 md:p-4 rounded-full">
+							<img loading="lazy" class="w-[clamp(1rem,3vw,2rem)] h-[clamp(1rem,3vw,2rem)]" alt={tecnologia.nombre} src={tecnologia.logo}/>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+		</div>
 	</div>
-</div>
+
+<style>
+	.categoria-btn.activo {
+		background-color: #FFF0DB;
+		color: #21201F;
+	}
+	.skills-grupo {
+		opacity: 0;
+		transform: translateY(8px);
+		pointer-events: none;
+	}
+	.skills-grupo.activo {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+		position: relative;
+	}
+
+	.marquee {
+		animation: marqueeMovement 10s infinite linear
+	}
+
+	@keyframes marqueeMovement {
+		0% { transform: translateX(0%);}
+		100% { transform: translateX(-50%);}
+	}
+
+</style>
+
+<script>
+	function initFiltroSkills() {
+		const botones = document.querySelectorAll<HTMLButtonElement>('.categoria-btn');
+		const grupos = document.querySelectorAll<HTMLElement>('.skills-grupo');
+
+		function activar(categoria: string) {
+			botones.forEach((b) => b.classList.toggle('activo', b.dataset.categoria === categoria));
+			grupos.forEach((g) => g.classList.toggle('activo', g.dataset.grupo === categoria));
+		}
+
+		botones.forEach((btn) => {
+			btn.addEventListener('click', () => activar(btn.dataset.categoria!));
+		});
+
+		activar('backend');
+	}
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initFiltroSkills);
+	} else {
+		initFiltroSkills();
+	}
+	document.addEventListener('astro:page-load', initFiltroSkills);
+</script>

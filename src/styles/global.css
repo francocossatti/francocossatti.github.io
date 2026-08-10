@@ -17,6 +17,21 @@
 .card {
     background-color : #21201F;
     border-radius: 14px;
-    padding: 1rem;
+    padding: 16px;
     @apply drop-shadow-lg;
+}
+
+.scrollbar-custom {
+  scrollbar-width: thin;
+  scrollbar-color: #D3CFCA transparent;
+}
+.scrollbar-custom::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #D3CFCA;
+  border-radius: 8px;
 }
