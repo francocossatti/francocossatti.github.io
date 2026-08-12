@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
-@theme {
-  /* Así se configuran las fuentes en Tailwind v4 */
-  --font-urbanist: "Urbanist";
-  --font-open-sans: "Open Sans";
+@theme inline {
+  --font-sans-serif: var(--font-urbanist);
+  --font-sans: var(--font-open-sans);
 }
 
 .grain-overlay {
