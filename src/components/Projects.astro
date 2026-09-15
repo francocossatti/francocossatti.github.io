@@ -1,11 +1,15 @@
 ---
-import laptop from '../assets/laptop.svg';
-import smartphone from '../assets/smartphone.svg';
+import Laptop from '../assets/laptop.svg';
+import Smartphone from '../assets/smartphone.svg';
 import LogoSolidJS from '../assets/logo-solidjs.svg';
 import LogoTailwind from '../assets/logo-tailwind.svg';
 import LogoMotion from '../assets/logo-motion.svg';
+import Test from './Test.astro';
 import ProjectButton from './ProjectButton.astro';
 import { Image } from 'astro:assets';
+
+const Proyectos = [{Laptop: Laptop, Smartphone: Smartphone}]
+
 ---
 
 <div id="projects" class="w-full flex relative flex-col justify-center p-4 gap-16 lg:gap-0">
@@ -18,8 +22,8 @@ import { Image } from 'astro:assets';
             <h1 class="w-full uppercase text-[3.625rem] lg:text-[5.5rem] text-center lg:text-left font-urbanist text-[#D3CFCA] leading-[0.95]">Mis <br class="lg:hidden"><span class="text-[#FFF0DB] font-extrabold"> Proyectos</span></h1>
 
             <div class="flex w-full gap-4 justify-center lg:justify-start">
-                <ProjectButton svg={laptop.src} isDisabled={true} texto="Web"/>
-                <ProjectButton svg={smartphone.src} isDisabled={false} texto="Smartphone"/>
+                <ProjectButton svg={Laptop.src} isDisabled={true} texto="Laptop"/>
+                <ProjectButton svg={Smartphone.src} isDisabled={false} texto="Smartphone"/>
             </div>
 
             <div class="flex flex-col gap-5">
@@ -32,7 +36,7 @@ import { Image } from 'astro:assets';
             </div>
         </div>
         <div class="flex h-[clamp(15rem,30vw,25rem)] [&_img]:w-full self-center">
-            <Image alt="Dispositivo" src={laptop} layout='constrained' class="svg-container" priority/>
+            <Test/>
         </div>
     </div>
 </div>
@@ -40,13 +44,12 @@ import { Image } from 'astro:assets';
 <script>
     const buttons = document.getElementsByName('projectButton');
     const svgContainer = document.getElementsByClassName('svg-container')[0]
-    console.log(svgContainer)
     let selectedButton = buttons[0];
     buttons.forEach((button) => {
         button.addEventListener('click', function() {
             selectedButton.removeAttribute('disabled')
             button.setAttribute('disabled', '')
-            svgContainer!.setAttribute('src', button.getAttribute('value')!)
+            svgContainer!.setAttribute('srcset', button.getAttribute('value')!)
             selectedButton = button;
         })
     })
