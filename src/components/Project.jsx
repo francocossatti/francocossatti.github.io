@@ -1,4 +1,4 @@
-import { createEffect, createSignal, For, Index } from 'solid-js';
+import { createEffect, createSignal, For } from 'solid-js';
 
 import ProjectButton from './ProjectButton.jsx';
 import Flecha from './Flecha.jsx';
@@ -63,11 +63,11 @@ export default function Project() {
 
             <div class="flex flex-col gap-5">
                 <div class="flex gap-4 lg:justify-start justify-center">
-                <Index each={Object.values(projects()[projectIndex()].Skills)}>
+                <For each={Object.values(projects()[projectIndex()].Skills)}>
                     {(item) => (
                         <div class="text-[12px] lg:text-[14px] flex gap-2 justify-center text-center drop-shadow-lg font-open-sans text-[#D3CFCA] w-1/3 rounded-full bg-[#21201F] p-2 lg:py-3">{item}</div>
                     )}
-                </Index>
+                </For>
                 
                 
                 </div>
