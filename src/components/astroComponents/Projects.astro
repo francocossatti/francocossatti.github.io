@@ -1,0 +1,13 @@
+---
+import Project from '../Project.jsx'
+---
+
+<div id="projects" class="w-full flex relative flex-col justify-center p-4 gap-16 lg:gap-0">
+    <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl left-[clamp(1rem,20vw,16rem)] top-[clamp(6rem,15vh,16rem)]"></div>
+    <div class="absolute w-[clamp(6rem,15vw,16rem)] aspect-square bg-[#FFF0DB] rounded-full blur-3xl right-[clamp(1rem,40vw,16rem)] top-[clamp(1rem,50vh,35rem)]"></div>
+
+    <div class="w-full z-20 flex flex-col gap-4 lg:gap-0 lg:flex-row justify-evenly">
+
+        <Project client:load/>
+    </div>
+</div>

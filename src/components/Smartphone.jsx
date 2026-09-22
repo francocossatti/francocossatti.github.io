@@ -1,9 +1,5 @@
----
-import { Image } from 'astro:assets';
-import berrutiSmartphone from '../assets/berrutiSmartphone.png'
----
-
-<svg width="81" height="161" viewBox="0 0 81 161" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+export default function Smartphone(props) {
+    return <svg class="w-full max-h-60 lg:max-h-80" viewBox="0 0 81 161" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g clip-path="url(#clip0_438_21)">
 <path d="M69.9546 5.12274H11.0455C7.38534 5.12274 4.41821 8.07156 4.41821 11.7091V149.291C4.41821 152.928 7.38534 155.877 11.0455 155.877H69.9546C73.6147 155.877 76.5818 152.928 76.5818 149.291V11.7091C76.5818 8.07156 73.6147 5.12274 69.9546 5.12274Z" fill="white"/>
 <path d="M73.6364 20.125H7.36365V140.875H73.6364V20.125Z" fill="#F7F7F7"/>
@@ -17,15 +13,12 @@ import berrutiSmartphone from '../assets/berrutiSmartphone.png'
 </g>
 <defs>
 <pattern id="pattern0_438_21" patternContentUnits="objectBoundingBox" width="1" height="1">
-<use xlink:href="#image0_438_21" transform="matrix(0.00250776 0 0 0.00121236 -0.00405943 0)"/>
+<use xlink:href="#image" transform="matrix(0.00250776 0 0 0.00121236 -0.00405943 0)"/>
 </pattern>
 <clipPath id="clip0_438_21">
 <rect width="81" height="161" fill="white"/>
 </clipPath>
-<image id="image0_438_21" width="402" height="874" preserveAspectRatio="none" href="file:///C:\Users\frcos\proyectoPortfolio\src\assets\berrutiSmartphone.png"/>
+<image id="image" preserveAspectRatio="none" width={400} href={props.image}/>
 </defs>
 </svg>
-
-<script>
-document.getElementById("image")?.setAttribute("width", "400")
-</script>
+}
