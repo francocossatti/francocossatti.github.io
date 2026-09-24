@@ -1,6 +1,6 @@
 export default function logoMotion() {
     return <div class="flex gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 960 960">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 960 960">
   <defs>
     <linearGradient id="grad_bar3" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#EBBB14"/>
