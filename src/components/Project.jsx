@@ -55,6 +55,9 @@ export default function Project() {
 
                     if (!projects()[projectIndex()].Smartphone) {
                         projectButtons[1].classList.add('hidden')
+                        setSelectedButton(projectButtons[0])
+                        projectButtons[0].setAttribute('disabled', '')
+                        setDevice(projectButtons[0].getAttribute('value'))
                     } else {
                         projectButtons[1].classList.remove('hidden')
                     }
