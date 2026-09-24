@@ -1,0 +1,25 @@
+export default function logoMotion() {
+    return <div class="flex gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 960 960">
+  <defs>
+    <linearGradient id="grad_bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EBBB14"/>
+      <stop offset="50%" stop-color="#CE870A"/>
+      <stop offset="100%" stop-color="#B25500"/>
+    </linearGradient>
+    <linearGradient id="grad_bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9E583"/>
+      <stop offset="50%" stop-color="#EBBE41"/>
+      <stop offset="100%" stop-color="#DE9801"/>
+    </linearGradient>
+    <linearGradient id="grad_bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F9E68B"/>
+      <stop offset="50%" stop-color="#F6D95E"/>
+      <stop offset="100%" stop-color="#F3CD32"/>
+    </linearGradient>
+  </defs>
+  <rect x="508" y="0" width="333" height="960" rx="34" ry="34" fill="url(#grad_bar3)"/>
+  <rect x="312" y="239" width="332" height="721" rx="34" ry="34" fill="url(#grad_bar2)"/>
+  <rect x="118" y="480" width="332" height="480" rx="34" ry="34" fill="url(#grad_bar1)"/>
+</svg> PowerBI</div>
+}

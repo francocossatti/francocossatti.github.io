@@ -16,13 +16,15 @@ import logoSolidJS from './svgComponents/LogoSolidJS.jsx';
 import logoMotion from './svgComponents/LogoMotion.jsx';
 import logoTailwind from './svgComponents/LogoTailwind.jsx';
 import logoJavascript from './svgComponents/LogoJavascript.jsx'
+import logoPython from './svgComponents/LogoPython.jsx'
+import logoPowerBI from './svgComponents/LogoPowerBI.jsx'
 
 const [projects, setProjects] = createSignal([
         {Laptop: berrutiLaptop.src, Smartphone: berrutiSmartphone.src, Summary: <p>Diseño para una <span class="text-[#FFF0DB] font-bold">agencia de transporte interdepartamental</span> en el departamento de Colonia.</p>, Skills: {logoSolidJS, logoMotion, logoTailwind}}, 
         {Laptop: WareraLaptop.src, Smartphone: WareraSmartphone.src, Summary: <p>Aplicación web con <span class="text-[#FFF0DB] font-bold">JavaScript</span>, Tailwind CSS y Chart.js que optimiza builds con <span class="text-[#FFF0DB] font-bold">algoritmos genéticos, UCB, Simulated Annealing y Monte Carlo</span>.
 </p>, Skills: {logoJavascript, logoTailwind}, Link: "https://ejercitouruguayo.netlify.app/"},
         {Laptop: SteamLaptop.src, Smartphone: null, Summary: <p>Proyecto de <span class="text-[#FFF0DB] font-bold">Python</span> y Power BI para analizar precios y accesibilidad de juegos en Uruguay.</p>
-, Skills: {logoJavascript, logoTailwind}, Link: "https://github.com/francocossatti/Steam-Uruguay"}])
+, Skills: {logoPython, logoPowerBI}, Link: "https://github.com/francocossatti/Steam-Uruguay"}])
 
 export default function Project() {
     const [projectIndex, setProjectIndex] = createSignal(0)
