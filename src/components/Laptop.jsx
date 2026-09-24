@@ -1,6 +1,6 @@
 export default function Laptop(props) {
     return <svg class="w-full" viewBox="0 0 281 167" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M209.762 140.727H70.2625V144.907H209.762V140.727Z" fill="#333333"/>
+<a href={props.href}><path d="M209.762 140.727H70.2625V144.907H209.762V140.727Z" fill="#333333"/>
 <path d="M246.73 0H33.2949C28.6723 0 24.9249 3.7429 24.9249 8.36V134.457C24.9249 139.074 28.6723 142.817 33.2949 142.817H246.73C251.353 142.817 255.1 139.074 255.1 134.457V8.36C255.1 3.7429 251.353 0 246.73 0Z" fill="#111111"/>
 <path d="M140.012 10.45C141.168 10.45 142.105 9.51429 142.105 8.36002C142.105 7.20574 141.168 6.27002 140.012 6.27002C138.857 6.27002 137.92 7.20574 137.92 8.36002C137.92 9.51429 138.857 10.45 140.012 10.45Z" fill="#333333"/>
 <path d="M140.012 9.05666C140.398 9.05666 140.71 8.74476 140.71 8.36C140.71 7.97524 140.398 7.66333 140.012 7.66333C139.627 7.66333 139.315 7.97524 139.315 8.36C139.315 8.74476 139.627 9.05666 140.012 9.05666Z" fill="black"/>
@@ -44,6 +44,6 @@ export default function Laptop(props) {
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_180_149" result="shape"/>
 </filter>
 <image id="image" preserveAspectRatio="none" width={1450} height={900} href={props.image}/>
-</defs>
+</defs></a>
 </svg>
 }

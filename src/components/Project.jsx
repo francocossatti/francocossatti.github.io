@@ -10,6 +10,7 @@ import berrutiSmartphone from '../assets/berrutiSmartphone.png'
 import berrutiLaptop from '../assets/berrutiLaptop.png'
 import WareraLaptop from '../assets/WareraAppLaptop.png'
 import WareraSmartphone from '../assets/WareraAppSmartphone.png'
+import SteamLaptop from '../assets/SteamUruguay.png'
 
 import logoSolidJS from './svgComponents/LogoSolidJS.jsx';
 import logoMotion from './svgComponents/LogoMotion.jsx';
@@ -19,7 +20,9 @@ import logoJavascript from './svgComponents/LogoJavascript.jsx'
 const [projects, setProjects] = createSignal([
         {Laptop: berrutiLaptop.src, Smartphone: berrutiSmartphone.src, Summary: <p>Diseño para una <span class="text-[#FFF0DB] font-bold">agencia de transporte interdepartamental</span> en el departamento de Colonia.</p>, Skills: {logoSolidJS, logoMotion, logoTailwind}}, 
         {Laptop: WareraLaptop.src, Smartphone: WareraSmartphone.src, Summary: <p>Aplicación web con <span class="text-[#FFF0DB] font-bold">JavaScript</span>, Tailwind CSS y Chart.js que optimiza builds con <span class="text-[#FFF0DB] font-bold">algoritmos genéticos, UCB, Simulated Annealing y Monte Carlo</span>.
-</p>, Skills: {logoJavascript, logoTailwind}}])
+</p>, Skills: {logoJavascript, logoTailwind}, Link: "https://ejercitouruguayo.netlify.app/"},
+        {Laptop: SteamLaptop.src, Smartphone: null, Summary: <p>Proyecto de <span class="text-[#FFF0DB] font-bold">Python</span> y Power BI para analizar precios y accesibilidad de juegos en Uruguay.</p>
+, Skills: {logoJavascript, logoTailwind}, Link: "https://github.com/francocossatti/Steam-Uruguay"}])
 
 export default function Project() {
     const [projectIndex, setProjectIndex] = createSignal(0)
@@ -42,11 +45,16 @@ export default function Project() {
 
         ArrowButtons.forEach((button) => {
             button.addEventListener('click', function() {
-                    console.log("hola")
                     if (button.getAttribute('class') == 'Arrowleft' && projectIndex() != 0) {
                     setProjectIndex(projectIndex() - 1)
                     } else if (button.getAttribute('class') !== 'Arrowleft' && projectIndex() != (projects().length - 1) ) {
                     setProjectIndex(projectIndex() + 1)
+                    }
+
+                    if (!projects()[projectIndex()].Smartphone) {
+                        projectButtons[1].classList.add('hidden')
+                    } else {
+                        projectButtons[1].classList.remove('hidden')
                     }
                 })
         })})
@@ -76,7 +84,7 @@ export default function Project() {
         </div>
         <div class="flex w-full lg:w-1/3 self-center">
             <Flecha orientation="left"/>
-            {device() == "Laptop" ? <Laptop image={projects()[projectIndex()].Laptop}/> : <Smartphone image={projects()[projectIndex()].Smartphone}/>}
+            {device() == "Laptop" ? <Laptop image={projects()[projectIndex()].Laptop} href={projects()[projectIndex()].Link}/> : <Smartphone image={projects()[projectIndex()].Smartphone} href={projects()[projectIndex()].Link}/>}
             <Flecha/>
         </div></>
 }

@@ -1,6 +1,6 @@
 export default function Smartphone(props) {
     return <svg class="w-full max-h-60 lg:max-h-80" viewBox="0 0 81 161" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g clip-path="url(#clip0_438_21)">
+<a href={props.href}><g clip-path="url(#clip0_438_21)">
 <path d="M69.9546 5.12274H11.0455C7.38534 5.12274 4.41821 8.07156 4.41821 11.7091V149.291C4.41821 152.928 7.38534 155.877 11.0455 155.877H69.9546C73.6147 155.877 76.5818 152.928 76.5818 149.291V11.7091C76.5818 8.07156 73.6147 5.12274 69.9546 5.12274Z" fill="white"/>
 <path d="M73.6364 20.125H7.36365V140.875H73.6364V20.125Z" fill="#F7F7F7"/>
 <path d="M69.9545 0.731812H11.0454C5.35187 0.731812 0.736328 5.31886 0.736328 10.9773V150.023C0.736328 155.681 5.35187 160.268 11.0454 160.268H69.9545C75.6481 160.268 80.2636 155.681 80.2636 150.023V10.9773C80.2636 5.31886 75.6481 0.731812 69.9545 0.731812Z" fill="#111111" stroke="#333333" stroke-width="2"/>
@@ -19,6 +19,6 @@ export default function Smartphone(props) {
 <rect width="81" height="161" fill="white"/>
 </clipPath>
 <image id="image" preserveAspectRatio="none" width={400} href={props.image}/>
-</defs>
+</defs></a>
 </svg>
 }
