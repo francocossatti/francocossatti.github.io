@@ -2,43 +2,89 @@
 import '../styles/global.css';
 import up from '../assets/up.svg?raw';
 import { Font } from 'astro:assets';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Franco Cossatti | Desarrollador Web en Nueva Palmira y Colonia",
+  description = "Desarrollo y diseño de sitios web, tiendas online y software a medida en Nueva Palmira y el departamento de Colonia, Uruguay."
+} = Astro.props;
 ---
 <!doctype html>
 <html lang="es" class="overflow-hidden overflow-y-scroll snap-y snap-mandatory scrollbar-custom">
-	<head>
-		<meta charset="utf-8" />
-		<Font cssVariable='--font-urbanist' preload/>
-		<Font cssVariable='--font-open-sans' preload/>
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content="Portfolio web personal de Franco Cossatti, desarrollador de software Uruguayo."/>
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Franco Cossatti</title>
-	</head>
-	  <body class="bg-[#1A1918] relative m-0">
-		<div class="inset-0 grain-overlay z-10"/>
-		<slot/>
-		<a aria-label="Up to home button" id="smooth-scroll" class="animate-bounce hidden fixed z-30 w-[clamp(3.5rem,6vw,4rem)] flex items-center justify-center drop-shadow-lg aspect-square bg-[#21201F] bottom-4 right-4 rounded-full" href="#home">
-			<div class="contenedor-icono" set:html={up} />
-		</a>
-		</body>
+    <head>
+        <meta charset="utf-8" />
+        <Font cssVariable='--font-urbanist' preload/>
+        <Font cssVariable='--font-open-sans' preload/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- SEO Principal -->
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href="https://francocossatti.github.io/" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Redes Sociales y WhatsApp -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content="https://francocossatti.github.io/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="es_UY" />
+
+        <!-- Datos Estructurados para Google (SEO Local) -->
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Franco Cossatti - Desarrollador Web",
+            "url": "https://francocossatti.github.io/",
+            "jobTitle": "Desarrollador Web y de Software",
+            "description": "Servicios de diseño web, automatización y desarrollo de software en Nueva Palmira y Colonia, Uruguay.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Nueva Palmira",
+              "addressRegion": "Colonia",
+              "addressCountry": "UY"
+            },
+            "areaServed": [
+              "Nueva Palmira",
+              "Carmelo",
+              "Colonia del Sacramento",
+              "Departamento de Colonia",
+              "Uruguay"
+            ]
+          }
+        </script>
+    </head>
+    <body class="bg-[#1A1918] relative m-0">
+        <div class="inset-0 grain-overlay z-10"/>
+        <slot/>
+        <a aria-label="Up to home button" id="smooth-scroll" class="animate-bounce hidden fixed z-30 w-[clamp(3.5rem,6vw,4rem)] flex items-center justify-center drop-shadow-lg aspect-square bg-[#21201F] bottom-4 right-4 rounded-full" href="#home">
+            <div class="contenedor-icono" set:html={up} />
+        </a>
+    </body>
 </html>
 
 <script>
 const boton = document.getElementById('smooth-scroll');
 
-	function scrollFunction() {
-		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
-			boton!.classList.remove('hidden')
-		} else {
-			boton!.classList.add('hidden')
-		}
-	}
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ) {
+            boton!.classList.remove('hidden')
+        } else {
+            boton!.classList.add('hidden')
+        }
+    }
 
-	document.addEventListener('scroll', (event) => {
-		scrollFunction()
-	}, true)
+    document.addEventListener('scroll', (event) => {
+        scrollFunction()
+    }, true)
 
     boton!.addEventListener('click', (event) => {
         event.preventDefault();
